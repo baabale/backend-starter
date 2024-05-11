@@ -15,12 +15,11 @@ app.use(express.static(path.join(__dirname + "/../public/")));
 
 app.use("/uploads", express.static("public/upload/"));
 
-const userRouters = require("./users/route");
-app.use("/api/v1/users", userRouters);
-
 // Customer Route
-const customerRouters = require("./customers/route");
-app.use("/api/v1/customers", customerRouters);
+const { injectUserRoute } = require("./users");
+injectUserRoute(app);
+
+
 
 app.use("*", (req, res) => {
   res.status(404).json({
