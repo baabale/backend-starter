@@ -16,10 +16,13 @@ app.use(express.static(path.join(__dirname + "/../public/")));
 app.use("/uploads", express.static("public/upload/"));
 
 // Customer Route
-const { injectUserRoute } = require("./users");
-injectUserRoute(app);
+const injectUserRoutes = require("./users");
+injectUserRoutes(app);
 
 
+// Initialize Swagger
+const swagger = require("./utils/swagger");
+swagger(app)
 
 app.use("*", (req, res) => {
   res.status(404).json({

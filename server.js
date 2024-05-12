@@ -21,9 +21,6 @@ mongoose
     return;
   });
 
-swagger(app)
-
-
 // Start Server
 const port = process.env.PORT || 5000;
 

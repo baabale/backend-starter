@@ -73,3 +73,51 @@ UserSchema.plugin(aggregatePaginate);
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;
+
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         _id:
+ *           type: string
+ *         username:
+ *           type: string
+ *         password:
+ *           type: string
+ *         role:
+ *           type: string
+ *           enum: ["admin", "user"]
+ *         createdBy:
+ *           type: string
+ *         status:
+ *           type: string
+ *           enum: ["active", "inactive", "suspended"]
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ */
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Error:
+ *       type: object
+ *       properties:
+ *         message:
+ *           type: string
+ *           description: Error message
+ *         code:
+ *           type: integer
+ *           description: Error code
+ *         status:
+ *           type: integer
+ *           description: HTTP status code
+ */
