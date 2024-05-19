@@ -102,12 +102,12 @@ module.exports = User;
  *         updatedAt:
  *           type: string
  *           format: date-time
- */
-
-/**
- * @swagger
- * components:
- *   schemas:
+ *
+ *     CreateUser:
+ *       type: object
+ *       allOf:
+ *         - $ref: '#/components/schemas/User'
+ *
  *     Error:
  *       type: object
  *       properties:

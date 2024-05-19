@@ -30,16 +30,15 @@ const {
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: "#/components/schemas/User"
  *       '400':
  *         description: Invalid registration data
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: "#/components/schemas/Error"
  *     security:
  *       - bearerAuth: []
- *
  */
 router.post("/register", register);
 
@@ -71,7 +70,7 @@ router.post("/register", register);
  *         description: Bad request
  *       500:
  *         description: Internal server error
- * */
+ */
 router.post("/login", login);
 
 /**
@@ -116,14 +115,7 @@ router.get("/", getUsers);
  *               $ref: '#/components/schemas/User'
  *     security:
  *       - bearerAuth: []
- *
- * components:
- *   schemas:
- *     CreateUser:
- *       type: object
- *       $ref: '#/components/schemas/User'
- *
- * */
+ */
 router.post("/", guard, createUser);
 
 /**
@@ -148,13 +140,7 @@ router.post("/", guard, createUser);
  *               $ref: '#/components/schemas/User'
  *     security:
  *       - bearerAuth: []
- *
- * components:
- *   schemas:
- *     User
- *       ref: '#/components/schemas/User'
- *
- * */
+ */
 router.get("/:id", guard, getUser);
 
 /**
